@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    
+    <data name="UpsertClientProfile" xml:space="preserve">
+    <value>
+      INSERT INTO Clients (Id, DateOfBirth, Gender, PassportId, ExternalClientId)
+      VALUES (@Id, @DateOfBirth, @Gender, @PassportId, @ExternalClientId)
+      ON CONFLICT (Id) DO UPDATE
+      SET DateOfBirth = EXCLUDED.DateOfBirth,
+          Gender = EXCLUDED.Gender,
+          PassportId = EXCLUDED.PassportId,
+          ExternalClientId = EXCLUDED.ExternalClientId;
+    </value>
+  </data>
+    
+    <data name="GetSubscriptionCountByTrainer" xml:space="preserve">
+    <value>
+      SELECT 
+          t.id AS TrainerId, 
+          COUNT(s.id) AS SubscriptionCount
+      FROM 
+          subscriptions s
+      JOIN 
+          trainers t ON s.trainer_id = t.id
+      GROUP BY 
+          t.id
+      ORDER BY 
+          SubscriptionCount DESC;
+    </value>
+  </data>
+    
+    <data name="GetNewClientsByMonth" xml:space="preserve">
+    <value>
+      SELECT
+          DATE_TRUNC('month', CreatedDate) AS Month,
+          COUNT(id) AS NewClientCount
+      FROM
+          clients
+      GROUP BY
+          Month
+      ORDER BY
+          Month DESC;
+    </value>
+  </data>
+    
+    <data name="GetPopularTrainersWithOccupiedPlaces" xml:space="preserve">
+    <value>
+      SELECT
+          t.Id AS TrainerId,
+          t.occupied_places AS OccupiedPlaces
+      FROM
+          trainers t
+      WHERE
+          t.occupied_places &gt; @Threshold
+      ORDER BY 
+          t.occupied_places DESC;
+    </value>
+  </data>
+    
+    <data name="GetVisitsCountByClient" xml:space="preserve">
+    <value>
+      SELECT 
+          c.id AS ClientId, 
+          c.first_name AS FirstName, 
+          c.last_name AS LastName,
+          COUNT(v.id) AS VisitCount
+      FROM 
+          clients c
+      LEFT JOIN 
+          visits v ON c.id = v.client_id
+      GROUP BY 
+          c.id, c.first_name, c.last_name
+      ORDER BY 
+          VisitCount DESC;
+    </value>
+  </data>
+    
+    <data name="GetClientsWithSubscriptionsAboveVisitCount" xml:space="preserve">
+    <value>
+      SELECT 
+          c.id AS ClientId, 
+          c.first_name AS FirstName, 
+          c.last_name AS LastName
+      FROM 
+          clients c
+      JOIN 
+          subscriptions s ON c.id = s.client_id
+      WHERE 
+          s.visits &gt; @MinVisitCount
+      GROUP BY 
+          c.id, c.first_name, c.last_name
+      ORDER BY 
+          c.last_name, c.first_name;
+    </value>
+  </data>
+    
+    <data name="GetTotalIncomeByTrainer" xml:space="preserve">
+    <value>
+      SELECT 
+          t.id AS TrainerId, 
+          t.name AS TrainerName,
+          COALESCE(SUM(s.price), 0) AS TotalIncome
+      FROM 
+          trainers t
+      LEFT JOIN 
+          subscriptions s ON t.id = s.trainer_id
+      GROUP BY 
+          t.id, t.name
+      ORDER BY 
+          TotalIncome DESC;
+    </value>
+  </data>
+</root>

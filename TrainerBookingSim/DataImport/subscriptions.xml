@@ -1,0 +1,22 @@
+<Subscriptions>
+    <Subscription>
+        <Id>1</Id>
+        <UserId>101</UserId>
+        <Visits>10</Visits>
+        <CreatedDate>2024-01-01T08:30:00</CreatedDate>
+        <ExpiryDate>2024-12-31T23:59:59</ExpiryDate>
+        <IsExpired>false</IsExpired>
+        <TrainerId>1</TrainerId>
+        <ExternalSubscriptionId>1001</ExternalSubscriptionId>
+    </Subscription>
+    <Subscription>
+        <Id>2</Id>
+        <UserId>102</UserId>
+        <Visits>20</Visits>
+        <CreatedDate>2024-02-15T10:00:00</CreatedDate>
+        <ExpiryDate>2025-02-15T10:00:00</ExpiryDate>
+        <IsExpired>false</IsExpired>
+        <TrainerId>2</TrainerId>
+        <ExternalSubscriptionId>1002</ExternalSubscriptionId>
+    </Subscription>
+</Subscriptions>

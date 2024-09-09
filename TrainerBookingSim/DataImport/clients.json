@@ -1,0 +1,14 @@
+[
+  {
+    "Id" : 1,
+    "FirstName" : "Petr",
+    "LastName" : "Petrovich",
+    "ExternalClientId": "client-id-1"
+  },
+  {
+    "Id" : 2,
+    "FirstName" : "Ivan",
+    "LastName" : "Ivanovich",
+    "ExternalClientId": "client-id-2"
+  }
+]

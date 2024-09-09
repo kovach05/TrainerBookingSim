@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "UserId": 101,
+    "Visits": 10,
+    "CreatedDate": "2024-01-01T08:30:00",
+    "ExpiryDate": "2024-12-31T23:59:59",
+    "IsExpired": false,
+    "TrainerId": 1,
+    "ExternalSubscriptionId": 1
+  },
+  {
+    "Id": 2,
+    "UserId": 102,
+    "Visits": 20,
+    "CreatedDate": "2024-02-15T10:00:00",
+    "ExpiryDate": "2025-02-15T10:00:00",
+    "IsExpired": false,
+    "TrainerId": 2,
+    "ExternalSubscriptionId": 2
+  }
+]

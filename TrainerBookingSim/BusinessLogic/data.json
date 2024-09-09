@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Trainer1",
+    "Price": 1000,
+    "MaxTicket": 10,
+    "Popular": 5,
+    "OccupiedPlaces": 9
+  },
+  {
+    "Name": "Trainer2",
+    "Price": 700,
+    "MaxTicket": 8,
+    "Popular": 4,
+    "OccupiedPlaces": 4
+  },
+  {
+    "Name": "Trainer3",
+    "Price": 750,
+    "MaxTicket": 10,
+    "Popular": 3,
+    "OccupiedPlaces": 7
+  }
+]

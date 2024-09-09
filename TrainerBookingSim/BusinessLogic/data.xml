@@ -1,0 +1,23 @@
+<Trainers>
+    <Trainer>
+        <Name>Trainer1</Name>
+        <Price>1000</Price>
+        <MaxTicket>10</MaxTicket>
+        <Popular>5</Popular>
+        <OccupiedPlaces>9</OccupiedPlaces>
+    </Trainer>
+    <Trainer>
+        <Name>Trainer2</Name>
+        <Price>700</Price>
+        <MaxTicket>8</MaxTicket>
+        <Popular>4</Popular>
+        <OccupiedPlaces>4</OccupiedPlaces>
+    </Trainer>
+    <Trainer>
+        <Name>Trainer3</Name>
+        <Price>750</Price>
+        <MaxTicket>10</MaxTicket>
+        <Popular>3</Popular>
+        <OccupiedPlaces>7</OccupiedPlaces>
+    </Trainer>
+</Trainers>

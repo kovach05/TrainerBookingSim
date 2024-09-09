@@ -1,0 +1,20 @@
+<Trainers>
+    <Trainer>
+        <Id>1</Id>
+        <Name>Ivan</Name>
+        <Price>150</Price>
+        <MaxTicket>50</MaxTicket>
+        <Popular>10</Popular>
+        <OccupiedPlaces>5</OccupiedPlaces>
+        <ExternalTrainerId>ext-id-1</ExternalTrainerId>
+    </Trainer>
+    <Trainer>
+        <Id>2</Id>
+        <Name>Bob</Name>
+        <Price>100</Price>
+        <MaxTicket>30</MaxTicket>
+        <Popular>8</Popular>
+        <OccupiedPlaces>10</OccupiedPlaces>
+        <ExternalTrainerId>ext-id-2</ExternalTrainerId>
+    </Trainer>
+</Trainers>

@@ -1,0 +1,14 @@
+<Clients>
+    <Client>
+        <Id>1</Id>
+        <FirstName>Petr</FirstName>
+        <LastName>Petrovich</LastName>
+        <ExternalClientId>client-id-1</ExternalClientId>
+    </Client>
+    <Client>
+        <Id>2</Id>
+        <FirstName>Ivan</FirstName>
+        <LastName>Ivanovich</LastName>
+        <ExternalClientId>client-id-2</ExternalClientId>
+    </Client>
+</Clients>

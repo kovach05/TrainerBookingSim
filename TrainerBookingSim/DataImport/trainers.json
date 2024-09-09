@@ -1,0 +1,20 @@
+[
+  {
+    "Id": 1,
+    "Name": "Ivan",
+    "Price": 150,
+    "MaxTicket": 50,
+    "Popular": 10,
+    "OccupiedPlaces": 5,
+    "ExternalTrainerId": "ext-id-1"
+  },
+  {
+    "Id": 2,
+    "Name": "Bob",
+    "Price": 100,
+    "MaxTicket": 30,
+    "Popular": 8,
+    "OccupiedPlaces": 10,
+    "ExternalTrainerId": "ext-id-2"
+    }
+]
